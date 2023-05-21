@@ -22,6 +22,9 @@ const GreetingF = ({ name = "noName", lastName = "noLastName" }) => {
   );
 };
 
-GreetingF.propTypes = {};
+GreetingF.propTypes = {
+    name: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,    
+};
 
 export default GreetingF;
