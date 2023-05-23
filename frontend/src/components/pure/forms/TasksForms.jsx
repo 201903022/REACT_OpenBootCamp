@@ -12,6 +12,15 @@ export default function TasksForms() {
                 <label htmlFor="description">Description</label>
                 <textarea className="form-control" id="description" rows="3"></textarea>
             </div>
+
+            <div className="form-group">
+                <label htmlFor="priority">Priority</label>
+                <select className="form-control" id="priority">
+                    <option>low</option>
+                    <option>medium</option>
+                    <option>high</option>
+                </select>
+            </div>
         </form>
     </div>
   )
