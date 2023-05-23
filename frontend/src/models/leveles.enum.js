@@ -1,6 +1,6 @@
 export const Levels = { 
-    URGENTE: 'URGENTE',
-    IMPORTANTE: 'IMPORTANTE',
+    HIGH: 'HIGH',
+    MEDIUM: 'MEDIUM',
     NORMAL: 'NORMAL',
     NO_URGENTE: 'NO_URGENTE',
     NO_IMPORTANTE: 'NO_IMPORTANTE',

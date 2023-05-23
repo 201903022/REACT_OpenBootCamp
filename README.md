@@ -49,3 +49,46 @@ To ignore, add // eslint-disable-next-line to the line before.
 
 # Dudas 
 onclick={buscar} o onClick={() => buscar()}
+
+
+# Hooks
+Funciones incorporadas para simplificar o especificar mecanismos para trabajar con funcionales.
+
+# props.children
+
+
+```
+const Example4 = (props) => {
+    return (
+        <div>
+            <h1>Ejemplo de CHILDREN PROPS</h1>
+            <h2> 
+                Nombre: {props.nombre}
+            </h2>
+            {props.children}
+        </div>
+    );
+};
+```
+
+```
+<Example4 nombre='Martin'>
+    <h2>Este es el hijo 1</h2>
+    <h3>Este es el hijo 2</h3>
+</Example4>
+```
+
+Lo que hace props.children es: <br/>
+- Crea un nuevo div y lo pone en el div padre <br/>
+- Crea un nuevo h1 y lo pone en el div hijo <br/>   
+- Crea un nuevo h2 y lo pone en el div hijo <br/>
+
+```        <div>
+            <h1>Ejemplo de CHILDREN PROPS</h1>
+            <h2> 
+                Nombre: {props.nombre}
+            </h2>
+                <h2>Este es el hijo 1</h2>
+                 <h3>Este es el hijo 2</h3>
+        </div>
+```
