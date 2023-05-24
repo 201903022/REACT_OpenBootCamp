@@ -3,7 +3,8 @@ import { Levels } from "../../models/leveles.enum";
 import TaskComponent from "../pure/task";
 import React,{useState} from 'react';
 import PropTypes from 'prop-types';
-import 'bootstrap/dist/css/bootstrap.css'
+import TasksForms from "../pure/forms/TasksForms";
+
 //rfcp
 const TaskList = () => {
     const defaultTask1 = new Task(0,'Example1','Default description1',true,Levels.HIGH)    
@@ -12,8 +13,58 @@ const TaskList = () => {
 
     const [tasksL, setTasksL] = useState([defaultTask1,defaultTask2,defaultTask3]);
 
+    function completeTask(id){ 
+        const tempTasks = [...tasksL]
+        for (let i = 0; i < tempTasks.length; i++) {
+            if(tempTasks[i].id === id){ 
+                tempTasks[i].status = !tempTasks[i].status
+                break;
+            }
+        }
+        // tempTasks[id].status = !tempTasks[id].status
+        setTasksL(tempTasks)
+    }
+
+    function deleteTasks(id) {
+        if (window.confirm("¿Estás seguro de que deseas eliminar esta tarea?")) {
+          const tempTasks = [...tasksL];
+          setTasksL(tempTasks.filter((n) => n.id !== id));
+        }
+      }
+    function editTask(id,name,description,level){ 
+        if (window.confirm('Are you sure you want to edit this task? ')) {
+            const tempTasks = [...tasksL]
+            for (let i = 0; i < tempTasks.length; i++) {
+                if(tempTasks[i].id === id){ 
+                    tempTasks[i].name = name
+                    tempTasks[i].description = description
+                    tempTasks[i].level = level
+                    break;
+                }
+            }
+            setTasksL(tempTasks)            
+        }
+    }
+
+    function addTask(name,description,level){ 
+        const tempTasks = [...tasksL]
+        const newTask = new Task(tempTasks.length,name,description,false,level)
+        tempTasks.push(newTask)
+        setTasksL(tempTasks)
+    }
+
     return (
         <div className='col-15'>
+        <div className="row">
+            <div className="col-6">
+                <div className="card">
+                    <div className="card-header p-3">
+                        <h5>Add Task</h5>
+                        <TasksForms add={addTask} />
+                        </div>
+                </div>
+            </div>
+        </div>
             <div className="card"> 
                 <div className="card-header p-3">
                     <h5>Task List</h5>
@@ -31,10 +82,15 @@ const TaskList = () => {
                         </thead>
                         <tbody>
                             {tasksL.map((task) => {
-                                return (<TaskComponent task={task} key={task.id} />);
+                                return (<TaskComponent
+                                 task={task} 
+                                 key={task.id} 
+                                complete={completeTask}
+                                deleteT={deleteTasks}
+                                edit={editTask}
+                                
+                                 />);
                             })}
-
-
                             {/* <TaskComponent task={defaultTask} /> */}
                         </tbody>
                     </table>                
