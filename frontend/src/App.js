@@ -10,6 +10,7 @@ import Example4 from './hooks/Example4';
 import LoginForm from './components/pure/forms/LoginForm';
 
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import TasksForms from './components/pure/forms/TasksForms';
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,8 @@ function App() {
           <h3>Este es el hijo 2</h3>
         </Example4> */}
         {/* <MiComponenteContexto/> */}
+
+        <TasksForms/>
         <TaskList></TaskList>
       </header>
     </div>
