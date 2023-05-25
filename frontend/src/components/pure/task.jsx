@@ -50,9 +50,9 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
 
     function ActionCompleted(){ 
         if(task.status){ 
-            return (<i className="bi bi-toggle-on task-action" style={{color:'green'}} onClick={()=>complete(task.id)} ></i>);
+            return (<i className="bi bi-toggle-on task-action p-2" style={{color:'green'}} onClick={()=>complete(task.id)} ></i>);
         }else{ 
-            return (<i className="bi bi-toggle2-off task-action" style={{color:'red'}} onClick={()=>complete(task.id)} ></i>);
+            return (<i className="bi bi-toggle2-off task-action p-2" style={{color:'red'}} onClick={()=>complete(task.id)} ></i>);
         }
     } 
 
@@ -75,7 +75,7 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
 
     const priorityByIsEditting = () =>{ 
         if(isEditing){ 
-            return (<select className="form-select" name="level" value={newPriority} onChange={handleInputChange}>
+            return (<select className="form-select mb-4 p-3 " name="level" value={newPriority} onChange={handleInputChange}>
                         <option value={Levels.NORMAL}>{Levels.NORMAL}</option>
                         <option value={Levels.MEDIUM}>{Levels.MEDIUM}  </option>
                         <option value={Levels.HIGH}>{Levels.HIGH}</option>
@@ -89,9 +89,9 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
     
     function editIcon(){ 
         if(isEditing){ 
-            return (<i className="bi bi-check2-square task-action" style={{color:'green'}} onClick={editTask} ></i>);
+            return (<i className="bi bi-check2-square task-action p-2" style={{color:'green'}} onClick={editTask} ></i>);
         }else{ 
-            return (<i className="bi bi-pencil-square task-action" style={{color:'red'}} onClick={handleEditClick} ></i>);
+            return (<i className="bi bi-pencil-square task-action p-2" style={{color:'red'}} onClick={handleEditClick} ></i>);
         }
     }
 
@@ -104,26 +104,27 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
     
     return (
         <tr className="fw-normal">
-          <th>
-            <input className="ms-2" 
+          <td className="align-middle p-4">
+            <input className="ms-2 mb-4 " 
             value={newName} 
             readOnly={!isEditing} 
             onChange={handleInputChange}name="name"
             ref={nameInputRef}
              />
-          </th>
-          <td className="align-middle">
-            <input className="ms-2" value={newDescription} readOnly={!isEditing} onChange={handleInputChange} name="description" />
           </td>
-          <td className="align-middle">
-            <span className="ms-2">{priorityByIsEditting()}</span>
+          <td className="align-middle p-4">
+            <textarea className="ms-2 mb-4 " 
+            value={newDescription} readOnly={!isEditing} 
+            onChange={handleInputChange} name="description" />
           </td>
-          <td className="align-middle">{iconCompleted()}</td>
-          <td className="align-middle">
-            <i className="bi bi-eye-fill task-action"></i>
+          <td className="align-middle p-3">
+            <span className="ms-2 p-4 ">{priorityByIsEditting()}</span>
+          </td>
+          <td className="align-middle ">{iconCompleted()}</td>
+          <td className="align-middle p-5">
             {ActionCompleted()}
             {editIcon()}
-            <i onClick={() => deleteT(task.id)} className="bi bi-trash3-fill task-action" style={{ color: 'tomato' }}></i>
+            <i onClick={() => deleteT(task.id)} className="bi bi-trash3-fill task-action p-2" style={{ color: 'tomato' }}></i>
           </td>
         </tr>
       );
