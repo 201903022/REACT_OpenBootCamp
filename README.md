@@ -92,3 +92,10 @@ Lo que hace props.children es: <br/>
                  <h3>Este es el hijo 2</h3>
         </div>
 ```
+
+# Comandos 
+Comando para seleccionar diferentes lineas de codigo: 
+```
+alt + click 
+ctrl + d 
+```

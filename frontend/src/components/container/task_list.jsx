@@ -103,23 +103,22 @@ const TaskList = () => {
 
 
     return (
-        <div className='col-15'>
-            <div className="row">
-                <div className="col-6">
-                    <div className="card">
-                        <div className="card-header p-3 align-items-center">
-                            <h5>Add Task</h5>
-                            <TasksForms add={addTask} />
-                            </div>
-                    </div>
+        <div className='col-15 '>
+            <div className="card">
+                <div className="card-header p-3">
+                    <h5>Add Task</h5>
+                </div>
+                <div className="card-body">
+                    <TasksForms add={addTask} />
                 </div>
             </div>
+
             <br/>         
             <div className="card"> 
                 <div className="card-header ">
                     <h5>Task List</h5>
                 </div>
-                <div className="card-body align-items-center" data-mdb-perfect-scrollbar style={{position: 'relative', }}>   
+                <div className="card-body" data-mdb-perfect-scrollbar style={{position: 'relative', }}>   
                    { 
                      tasksEmpty()
                    }       
