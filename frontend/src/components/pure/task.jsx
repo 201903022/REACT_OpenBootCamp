@@ -14,8 +14,11 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
     const [newLevel, setNewLevel] = useState('');
     const [newPriority, setNewPriority] = useState(task.level);
 
+    // if(addOrList){ }
+
     const nameInputRef = useRef(null);
     
+
     useEffect(() => {
         if (isEditing) {
             nameInputRef.current.focus();
@@ -103,18 +106,39 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
         edit(task.id,newName,newDescription,newPriority);
         setIsEditing(!isEditing);         
     }
+
+    function byStatus(){ 
+        if(task.status){ 
+            return (
+                <> 
+                    <input className="ms-2 mb-4 " 
+                    value={newName} 
+                    readOnly={!isEditing} 
+                    onChange={handleInputChange}name="name"
+                    ref={nameInputRef}
+                    />                
+                </>
+            );
+        }else{ 
+            return (
+                <> 
+                    <input className="ms-2 mb-4 " 
+                    value={newName} 
+                    readOnly={!isEditing} 
+                    onChange={handleInputChange}name="name"
+                    ref={nameInputRef}
+                    />                
+                </>
+            );
+        }
+    }
     
     return (
         <tr className="fw-normal">
           <td className="align-middle p-4">
-            <input className="ms-2 mb-4 " 
-            value={newName} 
-            readOnly={!isEditing} 
-            onChange={handleInputChange}name="name"
-            ref={nameInputRef}
-             />
+              {byStatus()}
           </td>
-          <td className="align-middle p-4">
+          <td className="align-middle p-4 ">
             <textarea className="ms-2 mb-4 " 
             value={newDescription} readOnly={!isEditing} 
             onChange={handleInputChange} name="description" />

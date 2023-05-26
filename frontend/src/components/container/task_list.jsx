@@ -12,6 +12,8 @@ const TaskList = () => {
     const defaultTask2 = new Task(1,'Example2','Default description2',false,Levels.NORMAL)    
     const defaultTask3 = new Task(2,'Example3','Default description3',true,Levels.MEDIUM)    
     const defaultTask4 = new Task(3,'Example4','Default description4',false,Levels.HIGH)    
+    const [addTaskForm, setAddTaskForm] = useState(false);
+    const [seeTaskList, setSeeTaskList] = useState(true);    
 
     const [tasksL, setTasksL] = useState([defaultTask1,defaultTask2,defaultTask3,defaultTask4]);
 
@@ -41,7 +43,8 @@ const TaskList = () => {
             </tbody>
         </table>   
         )
-    }    
+    }  
+
     function completeTask(id){ 
         const tempTasks = [...tasksL]
         for (let i = 0; i < tempTasks.length; i++) {
@@ -52,14 +55,15 @@ const TaskList = () => {
         }
         // tempTasks[id].status = !tempTasks[id].status
         setTasksL(tempTasks)
-    }
+    }    
 
     function deleteTasks(id) {
         if (window.confirm("¿Estás seguro de que deseas eliminar esta tarea?")) {
           const tempTasks = [...tasksL];
           setTasksL(tempTasks.filter((n) => n.id !== id));
         }
-      }
+    }
+
     function editTask(id,name,description,level){ 
         if (window.confirm('Are you sure you want to edit this task? ')) {
             const tempTasks = [...tasksL]
@@ -103,7 +107,7 @@ const TaskList = () => {
             <div className="row">
                 <div className="col-6">
                     <div className="card">
-                        <div className="card-header p-3">
+                        <div className="card-header p-3 align-items-center">
                             <h5>Add Task</h5>
                             <TasksForms add={addTask} />
                             </div>
@@ -115,7 +119,7 @@ const TaskList = () => {
                 <div className="card-header ">
                     <h5>Task List</h5>
                 </div>
-                <div className="card-body" data-mdb-perfect-scrollbar style={{position: 'relative', }}>   
+                <div className="card-body align-items-center" data-mdb-perfect-scrollbar style={{position: 'relative', }}>   
                    { 
                      tasksEmpty()
                    }       
