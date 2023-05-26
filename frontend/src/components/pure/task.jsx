@@ -35,6 +35,8 @@ const TaskComponent = ({task,complete,deleteT,edit}) => {
                 return (<span className='badge bg-warning'>{Levels.MEDIUM}</span>);
             case Levels.HIGH:
                 return (<span className='badge bg-danger'>{Levels.HIGH}</span>);
+            case Levels.LOW:
+                return (<span className='badge bg-info'>{Levels.LOW}</span>);
             default:
                 return (<span className='badge bg-primary'>{Levels.NORMAL}</span>);                
         }

@@ -1,0 +1,126 @@
+.custom-btncss {
+    margin: 40px;
+    min-width: 130px; /* Establece un ancho mínimo para el botón */
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden; /* Evita que el texto se desborde del botón */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+/* 2 */
+.butonn2cs {
+    background: rgb(96,9,240);
+    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+    border: none;
+    
+  }
+  .butonn2cs:before {
+    height: 0%;
+    width: 2px;
+  }
+  .butonn2cs:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+  .btn-6css {
+    background: rgb(247, 150, 192);
+    background: radial-gradient(
+      circle,
+      rgba(247, 150, 192, 1) 0%,
+      rgba(118, 174, 241, 1) 100%
+    );
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn-6css span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-6css:before,
+  .btn-6css:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-6css:before {
+    right: 0;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  
+  .btn-6css:after {
+    left: 0;
+    bottom: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  
+  .btn-6css:hover {
+    color: #76aef1;
+  }
+  
+  .btn-6css:hover:before,
+  .btn-6css:hover:after {
+    transform: scaleY(1);
+  }
+  
+  .btn-6css span:before,
+  .btn-6css span:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-6css span:before {
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .btn-6css span:after {
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  .btn-6css span:hover:before,
+  .btn-6css span:hover:after {
+    transform: scaleX(1);
+  }
+  

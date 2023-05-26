@@ -7,15 +7,18 @@ import Example1 from './hooks/Example1';
 import Example2 from './hooks/Example2';
 import MiComponenteContexto from './hooks/Example3';
 import Example4 from './hooks/Example4';
-import LoginForm from './components/pure/forms/LoginForm';
-
+import './Styles/Buttons.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import TasksForms from './components/pure/forms/TasksForms';
+import OptionalRender from './components/pure/optionalRender';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      { /*       
+      
+      */}
         {/* {Example of functional example} */}
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Greeting name='Martin' lastName='Lopez' />
@@ -31,8 +34,10 @@ function App() {
         </Example4> */}
         {/* <MiComponenteContexto/> */}
 
-        
-        <TaskList></TaskList>
+        <OptionalRender/>
+        {/* <TasksForms/> */}
+
+        {/* <TaskList></TaskList> */}
       </header>
     </div>
   );
