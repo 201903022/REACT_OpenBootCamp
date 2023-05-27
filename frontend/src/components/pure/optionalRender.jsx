@@ -4,6 +4,7 @@ import Button16 from './Buttons/button16';
 import Button6 from './Buttons/button6';
 import ButtonBlue from './Buttons/buttonBlue';
 import TaskList from '../container/task_list';
+import Footer from '../Footer/Footer';
 //Login LogOut buttons 
 
 const LoginButton = ({onClick}) => { 
@@ -66,6 +67,7 @@ const OptionalRender = () => {
                 <TaskList/>
             </>:null                 
             }
+            <Footer/>
         </div>
     );
 }

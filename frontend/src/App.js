@@ -12,6 +12,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import TasksForms from './components/pure/forms/TasksForms';
 import OptionalRender from './components/pure/optionalRender';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -36,7 +37,6 @@ function App() {
 
         <OptionalRender/>
         {/* <TasksForms/> */}
-
         {/* <TaskList></TaskList> */}
       </header>
     </div>
